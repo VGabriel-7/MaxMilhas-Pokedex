@@ -1,0 +1,49 @@
+/* Estilizacao da home */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.search-pokemon {
+  height: 30px;
+  width: 20em;
+}
+
+button {
+  height: 30px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Estilizacao da pokedex home */
+.pokedex-home {
+  align-items: center;
+  animation: inicialization 0.7s forwards;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  height: 90vh;
+  justify-content: center;
+  margin: auto;
+  transform: translateY(15px);
+  width: 50%;
+}
+
+/* Animacao de inicializacao da pagina */
+@keyframes inicialization {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
