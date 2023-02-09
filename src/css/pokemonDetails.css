@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li::first-letter, h1::first-letter {
+  text-transform: uppercase;
+}
+
+.main-details {
+  display: grid;
+  min-width: 800px;
+  min-height: 500px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "header stat"
+  "type ability"
+  "type held-item";
+  justify-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(16,102,233, 0.4);
+  animation: inicialization 0.7s forwards;
+  transform: translateY(15px);
+}
+
+@keyframes inicialization {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.main-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.main-details li {
+  list-style: none;
+  text-align: start;
+}
+
+/* Estilizacao do header e sua imagem */
+.header-container {
+  text-align: center;
+  min-width: 100%;
+  grid-area: header;
+}
+
+.pokemon-title-details {
+  font-size: 2.5rem;
+}
+
+.pokemon-image-details {
+  width: 150px;
+}
+
+.pokemon-image-details:hover {
+  animation: scaled 3s ease infinite;
+}
+
+@keyframes scaled {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% { transform: scale(1.1); }
+}
+
+/* Estilizacao do type */
+.type-container {
+  grid-area: type;
+  min-width: 100%;
+  text-align: center;
+}
+
+.types-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.type-container {
+  min-width: 100%;
+  text-align: center;
+}
+
+/* Estilizacao das informacoes de estatisticas*/
+.stat-container {
+  grid-area: stat;
+  text-align: center;
+  min-width: 100%;
+}
+
+.stats-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.stat {
+  display: flex;
+  gap: 3px;
+}
+
+/* Estilizacao das informacoes de habalidades */
+.ability-container {
+  grid-area: ability;
+  min-width: 100%;
+  text-align: center;
+}
+
+.abilities-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.held-item-container {
+  grid-area: held-item;
+  min-width: 100%;
+  text-align: center;
+}
+
+.held-items-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+
+.main-container-details {
+  border: 1px solid red;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  min-width: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+}
