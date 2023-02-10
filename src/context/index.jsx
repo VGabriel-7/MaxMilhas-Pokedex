@@ -18,7 +18,6 @@ export function Provider({ children }) {
 
   // Obtem todas as informacoes de 60 pokemons buscados no banco
   const getPokemons = async () => {
-    console.log('Rodou')
     // Obtem os nomes e urls de todos os pokemons
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=60');
     const data = await response.json();

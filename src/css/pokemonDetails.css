@@ -144,7 +144,6 @@ li::first-letter, h1::first-letter {
 
 
 .main-container-details {
-  border: 1px solid red;
   width: 100%;
   height: 100vh;
   display: flex;
