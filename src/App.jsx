@@ -8,14 +8,10 @@ import { Provider } from './context';
 
 function App() {
   return (
-    <Provider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/pokemon/:id" element={ <PokemonDetails /> } />
-          <Route path="/" element={ <Home /> } />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <Routes>
+      <Route path="/pokemon/:id" element={ <PokemonDetails /> } />
+      <Route path="/" element={ <Home /> } />
+    </Routes>
   )
 }
 

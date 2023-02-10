@@ -5,10 +5,15 @@ import '../../css/pokemon.css';
 export default function PokemonCard({ pokeImage, pokeName, id }) {
   const nav = useNavigate();
 
+  const handleClick = () => {
+    nav(`/pokemon/${id}`, { replace: true });
+  }
+
   return (
     <article
       className="pokemon-card"
-      onClick={() => nav(`/pokemon/${id}`)}
+      onClick={handleClick}
+      data-testid="pokemon-card"
     >
       <img
         className="pokemon-image"

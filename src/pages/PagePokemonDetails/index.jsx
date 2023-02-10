@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import PokemonDetails from '../../components/PokemonDetails';
+import { Context } from '../../context';
 
 import '../../css/pokemonDetails.css';
 
@@ -9,13 +10,13 @@ export default function PagePokemonDetails() {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState([]);
   const nav = useNavigate();
+  const { allPokemons } = useContext(Context);
 
   // Filtra o pokemon escolhido
   const filteredPokemon = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${+id}`);
-    const pokemon = await response.json();
+    const filtredPokemon = allPokemons.filter(({ id: pokeId }) => pokeId === +id );
 
-    setPokemon([pokemon]);
+    setPokemon(filtredPokemon);
   }
   
   useEffect(() => {

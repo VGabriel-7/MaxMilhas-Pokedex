@@ -1,22 +1,17 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import { BrowserRouter } from 'react-router-dom';
+import { Context } from '../../context';
+import { allPokemons } from '../mocksApiPokemon/mocksApp';
 
-import { Provider } from '../../context';
-
-// RTL renderiza com Router e Provider
-export default function customRendeR(component, initialPath = '/') {
-  const history = createMemoryHistory({ initialEntries: [initialPath] });
-
+const customRouter = (component) => {
   return {
     ...render(
-      <Router history={ history }>
-        <Provider>
-          { component }
-        </Provider>
-      </Router>
-    ),
-    history,
+    <Context.Provider value={{ allPokemons }}>
+      <BrowserRouter>
+        { component }
+      </BrowserRouter>
+    </Context.Provider>),
   };
-}
+};
+
+export default customRouter;
