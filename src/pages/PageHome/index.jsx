@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import PokemonCard from '../../components/PokemonCard';
 import { Context } from '../../context';
@@ -15,8 +15,12 @@ export default function Home() {
       .includes(searchPokemon.toLowerCase()));
 
     setFiltredPokemons(filtered);
-  }
-  
+  };
+
+  useEffect(() => {
+    document.title = 'Pokédex';
+  });
+
   return (
     <div className="home">
       <form>

@@ -21,6 +21,7 @@ export default function PagePokemonDetails() {
   
   useEffect(() => {
     filteredPokemon();
+    document.title = 'Pokemon Details';
   }, []);
 
   return (
