@@ -27,7 +27,7 @@ export default function PagePokemonDetails() {
       {
         pokemon.map(({
           name,
-          sprites: { front_shiny },
+          sprites: { front_default },
           abilities,
           held_items,
           types,
@@ -36,7 +36,7 @@ export default function PagePokemonDetails() {
           <PokemonDetails
             key={name}
             pokemonName={ name }
-            pokemonImage={ front_shiny }
+            pokemonImage={ front_default }
             pokemonAbilities={ abilities }
             heldItems={ held_items }
             types={ types }

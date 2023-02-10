@@ -9,7 +9,7 @@ export function Provider({ children }) {
   const getPokemons = async () => {
     console.log('Rodou')
     // Obtem os nomes e urls de todos os pokemons
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100');
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=60');
     const data = await response.json();
     // Forma um array com todas as informacoes dos pokemons obtidos
     const arrayPokemons = data.results.map(async ({ url }) => {
@@ -26,7 +26,7 @@ export function Provider({ children }) {
     getPokemons();
   }, []);
 
-  const provider = {allPokemons, setAllPokemons}
+  const provider = {allPokemons, setAllPokemons};
 
   return (
     <Context.Provider
