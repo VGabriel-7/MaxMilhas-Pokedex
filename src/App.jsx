@@ -1,10 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/PageHome';
 import PokemonDetails from './pages/PagePokemonDetails';
-
-import { Provider } from './context';
 
 function App() {
   return (
