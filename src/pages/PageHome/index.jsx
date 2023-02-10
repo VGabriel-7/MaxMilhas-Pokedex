@@ -37,10 +37,10 @@ export default function Home() {
         {/* Renderiza todos os cards de pokemons caso filtrados ou nao */}
         {
           [...(filtredPokemons.length > 0 ? filtredPokemons : allPokemons)]
-            .map(({ id, name, sprites: { front_shiny }}) => (
+            .map(({ id, name, sprites: { front_default }}) => (
               <PokemonCard
                 key={name}
-                pokeImage={ front_shiny }
+                pokeImage={ front_default }
                 pokeName={ name }
                 id={ id }
               />
