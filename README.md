@@ -18,7 +18,7 @@
 
   - `git clone git@github.com:VGabriel-7/MaxMilhas-Pokedex.git`.
   - Entre na pasta do repositório que você acabou de clonar:
-    - `cd MaxMilhas-Pokedex`
+    - `cd MaxMilhas-Pokedex/`
 
   2. Instale as dependências [**Caso existam**]
 
