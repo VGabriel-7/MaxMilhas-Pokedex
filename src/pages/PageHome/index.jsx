@@ -9,6 +9,7 @@ export default function Home() {
   const { allPokemons } = useContext(Context);
   const [filtredPokemons, setFiltredPokemons] = useState([]);
 
+  // Filtra o(s) pokemon(s) encontrados ao digitar no inpute search
   const filterPokemon = (searchPokemon) => {
     const filtered = allPokemons.filter(({ name }) => name.toLowerCase()
       .includes(searchPokemon.toLowerCase()));
