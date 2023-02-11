@@ -33,8 +33,6 @@ describe('Page Home', () => {
 
     await userEvent.type(inputSearchPokemons, 'ditto');
 
-    debug();
-
     expect(inputSearchPokemons).toHaveValue('ditto');
 
     const pokemonsRenders = await screen.findAllByAltText(/pokemon/i);
