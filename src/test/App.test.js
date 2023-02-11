@@ -17,7 +17,7 @@ describe('Page Home', () => {
   })
 
   it('Verifica se os cards de pokemons e o input são renderizados', () => {
-    const { debug } = customRouter(<App />);
+    customRouter(<App />);
 
     const inputSearchPokemon = screen.getByTestId('input-search');
     const pokemonsRenders = screen.getAllByAltText(/pokemon/i);
@@ -27,11 +27,13 @@ describe('Page Home', () => {
   });
 
   it('Verifica se ao digitar o nome de um pokemon no input apenas ele e renderizado', async () => {
-    customRouter(<App />);
+   const { debug } = customRouter(<App />);
 
     const inputSearchPokemons = screen.getByTestId('input-search');
 
     await userEvent.type(inputSearchPokemons, 'ditto');
+
+    debug();
 
     expect(inputSearchPokemons).toHaveValue('ditto');
 

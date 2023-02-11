@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import PokemonCard from '../../components/PokemonCard';
 import { Context } from '../../context';
@@ -8,7 +8,6 @@ import '../../css/home.css';
 export default function Home() {
   const { allPokemons } = useContext(Context);
   const [filtredPokemons, setFiltredPokemons] = useState([]);
-  // const [searchPokemon, setSearchPokemon] = useState([]);
 
   const filterPokemon = (searchPokemon) => {
     const filtered = allPokemons.filter(({ name }) => name.toLowerCase()
@@ -37,10 +36,10 @@ export default function Home() {
         {/* Renderiza todos os cards de pokemons caso filtrados ou nao */}
         {
           [...(filtredPokemons.length > 0 ? filtredPokemons : allPokemons)]
-            .map(({ id, name, sprites: { front_default }}) => (
+            .map(({ id, name, sprites: { front_shiny }}) => (
               <PokemonCard
                 key={name}
-                pokeImage={ front_default }
+                pokeImage={ front_shiny }
                 pokeName={ name }
                 id={ id }
               />

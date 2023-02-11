@@ -1,3 +1,4 @@
+import React from 'react';
 import '../../css/pokemonDetails.css';
 
 export default function PokemonDetails({
